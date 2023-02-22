@@ -22,6 +22,7 @@ public class StripeController {
     @ResponseStatus(code = HttpStatus.OK)
     public PaymentResponse chargeCard(@RequestBody PaymentRequest paymentRequest) {
         paymentRequest.setPaymentType(PaymentType.STRIPE);
+
         return paymentService.createPayment(paymentRequest);
     }
 }
