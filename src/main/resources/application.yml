@@ -1,0 +1,8 @@
+api:
+  paypal:
+    clientId: ${PAYPAL_CLIENT_ID}
+    clientSecret: ${PAYPAL_CLIENT_SECRET}
+  stripe:
+    secretKey: ${STRIPE_SECRET_KEY}
+server:
+  port: 8081
