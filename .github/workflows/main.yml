@@ -16,14 +16,10 @@ jobs:
           java-version: '11'
           distribution: 'adopt'
           architecture: x64
-
       - name: Build project
         run: mvn clean install
-#        run: mvn clean install
-
       - name: Print logs
         run: java --version
-
       - name: Deploy to Linode
         uses: appleboy/scp-action@master
         with:
@@ -31,4 +27,13 @@ jobs:
           username: root
           password: "development2026!"
           source: target/PaymentSystem-0.0.1-SNAPSHOT.jar
-          target: ~/var/www/myapp/myapp.jar
+          target: ~/var/deployments/
+      - name: SSH into Linode and deploy the application
+        uses: appleboy/ssh-action@master
+        with:
+          host: 170.187.241.49
+          username: root
+          password: "development2026!"
+          script: |
+            cd /var/deployments
+            java -jar PaymentSystem-0.0.1-SNAPSHOT.jar
