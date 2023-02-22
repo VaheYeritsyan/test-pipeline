@@ -18,7 +18,7 @@ jobs:
           architecture: x64
 
       - name: Build project
-        run: mvn clean package
+        run: mvn clean spring-boot:run
 
       - name: Print logs
         run: ls target/
