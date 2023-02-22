@@ -10,11 +10,12 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
-
       - name: Set up JDK
         uses: actions/setup-java@v2
         with:
           java-version: '11'
+          distribution: 'adopt'
+          architecture: x64
 
       - name: Build project
         run: ./mvnw clean package
