@@ -18,7 +18,7 @@ jobs:
           architecture: x64
 
       - name: Build project
-        run: ./mvnw clean package
+        run: mvn clean package
 
       - name: Deploy to Linode
         uses: appleboy/scp-action@master
