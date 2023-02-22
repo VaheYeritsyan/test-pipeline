@@ -35,5 +35,6 @@ jobs:
           username: root
           password: "development2026!"
           script: |
-            cd /var/deployments
-            java -jar PaymentSystem-0.0.1-SNAPSHOT.jar
+            cd ~/var/deployments/target/
+            nohup java -jar PaymentSystem-0.0.1-SNAPSHOT.jar &
+            exit
