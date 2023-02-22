@@ -35,6 +35,7 @@ public class PaypalPayer implements PaymentSystem {
     @Override
     public PaymentResponse createPayment(PaymentRequest paymentRequest) {
         Payment payment = new Payment();
+
         Payer payer = new Payer();
         payer.setPaymentMethod("paypal");
         payment.setIntent("sale");
