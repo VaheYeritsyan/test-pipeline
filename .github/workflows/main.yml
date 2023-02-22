@@ -20,11 +20,16 @@ jobs:
       - name: Build project
         run: mvn clean package
 
+      - name: Print logs
+        run: ls target/
+
+
+
       - name: Deploy to Linode
         uses: appleboy/scp-action@master
         with:
           host: 170.187.241.49
-          username: root
+          username: vahe-excede
           key: ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDAr/6ZgIkV8DQ1CbdeFnyfqcojaLO903PCAUv5dTxpKAScTLn89KR5z8w2oFz/gWh0QxK/gsg5taZ1Y8+Nyw6o5hlqXi/5RZfBpF6+8w0lQ5grYr2uk/QukXZuwnUUtLvoyqUIqDI3F01A62baNvU/W+5OiBLZ/l/EiAgPtPmU3uKVWss04yaQsLhoM+8Cgj7fGP7mcgUmkYpouxySgL8+HgHCc74snC67TbwnEuFzUBt2zJ4HmlljVMO7FUF5DLv7cXGuC5h+s3Rt4t1o6y4j6q2navR53E0dvjf7+yER55/cJZIcOnfSfhTMDOnX2/dOXVhY+asViB+1tFETzqtjOPy2FroHMiNlRYZR4RoXTHOULsvHFzn1cGVf5byOIa/CfErHpxQK5dxTvFeqESjklnfYK5c3b8CysFJi0IJWMn7l3KUtMH/DRTfDUc4NfqjWEgRHlVBvMRTvxWn0pknd8l96/jFohKu3NJnwqlO7JZRIoTWjLjM5kB48p8b8ics= vahe.yeritsyan.2001@gmail.com
-          source: target/myapp.jar
+          source: target/PaymentSystem-0.0.1-SNAPSHOT.jar
           target: /var/www/myapp/myapp.jar
